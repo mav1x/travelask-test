@@ -98,7 +98,7 @@ Filters.propTypes = propTypes;
 export default withFormik({
   mapPropsToValues: ({ filtersEntities }) => ({
     country: '',
-    type: '',
+    type: [],
     stars: [],
     reviews_amount: '',
     min_price: Math.max.apply(Math, filtersEntities.min_prices),

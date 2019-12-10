@@ -8,6 +8,7 @@ const propTypes = {
   name: PropTypes.string,
   label: PropTypes.string,
   children: PropTypes.node,
+  isMulti: PropTypes.bool,
 };
 
 const FormSelect = ({
@@ -16,6 +17,7 @@ const FormSelect = ({
   label,
   field,
   form,
+  isMulti,
 }) => {
   const handleChange = (value) => {
     form.setFieldValue(field.name, value);
@@ -30,6 +32,7 @@ const FormSelect = ({
         options={options}
         onChange={value => handleChange(value)}
         type="text"
+        isMulti={isMulti}
       />
     </div>
   );

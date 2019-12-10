@@ -61,7 +61,7 @@ function* submitFilters({ filters }) {
 
   const filteredHotels = hotels.filter(hotel => {
     const countryFilter = !country || country.value === hotel.country;
-    const typeFilter = !type || type.value === hotel.type;
+    const typeFilter = !type || type.length === 0 || type.map(item => item.value).includes(hotel.type);
     const starsFilter = stars.length === 0 || stars.includes(hotel.stars);
     const reviewsAmountFilter = !reviews_amount || reviews_amount <= hotel.reviews_amount;
     const minPriceFilter = min_price >= hotel.min_price;
